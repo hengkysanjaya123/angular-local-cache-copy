@@ -16,12 +16,13 @@ export interface Post {
 export class PostService {
 
   url = 'https://jsonplaceholder.typicode.com/posts';
-  initialPosts: Post[] = [{
-    id: 0,
-    title: 'test 1',
-    userId: 1,
-    body: 'body 1'
-  }];
+  initialPosts: Post[] = [
+    {id: 0, title: 'test 1', userId: 1, body: 'body 1'},
+    {id: 1, title: 'test 2', userId: 1, body: 'body 2'},
+    {id: 2, title: 'test 3', userId: 1, body: 'body 3'},
+    {id: 3, title: 'test 4', userId: 1, body: 'body 4'},
+    {id: 4, title: 'test 5', userId: 1, body: 'body 5'},
+  ];
 
   constructor(private http: HttpClient) {
   }
