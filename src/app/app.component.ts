@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Post, PostService} from '../services/post.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-local-cache-copy';
+  posts: Post[];
+
+  constructor(private postService: PostService) {
+    this.postService.getPosts().subscribe(res => {
+      this.posts = res;
+    });
+  }
 }
